@@ -19,6 +19,7 @@ public class PMI {
         Root wackypediaSections = getWackypediaSections();
         showAllSections(wackypediaSections);
         List<String> firstColumn = getFirstColumnFromSections(wackypediaSections);
+
         System.out.println("------------------------------------");
         showFirstColumn(firstColumn);
     }
