@@ -1,12 +1,8 @@
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import model.Element;
 import model.Root;
 import model.WordWithPosition;
 
 import java.io.*;
-import java.math.BigInteger;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +17,23 @@ public class PMI {
         List<String> firstColumn = getFirstColumnFromSections(wackypediaSections);
 
         System.out.println("------------------------------------");
-        showFirstColumn(firstColumn);
+        List<WordWithPosition> wordWithPositionList = convertToWordWithPositionList(wackypediaSections);
+
+        System.out.println("------SHOW FIRST COLUMN WITH POSITION------------");
+        wordWithPositionList.forEach(System.out::println);
+    }
+
+    private static List<WordWithPosition> convertToWordWithPositionList(Root root) {
+
+        List<WordWithPosition> wordWithPositionList = new ArrayList<>();
+
+        int[] position = { 0 };
+        root.getS().stream().forEach(s -> s.getWord().stream().forEach(s1 -> {
+            String[] wordWithDescription = s1.getWord().split("\\s+");
+            wordWithPositionList.add(new WordWithPosition(position[0]++,wordWithDescription[0]));
+        }));
+
+        return wordWithPositionList;
     }
 
     private static void showFirstColumn(List<String> firstColumn) {
