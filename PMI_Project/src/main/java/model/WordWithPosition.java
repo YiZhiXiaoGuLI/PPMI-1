@@ -10,7 +10,4 @@ public class WordWithPosition {
     private int position;
     private String word;
 
-    public WordWithPosition(String word) {
-        this.word = word;
-    }
 }
