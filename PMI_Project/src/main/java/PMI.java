@@ -1,4 +1,5 @@
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import model.CoocuranceMatrix;
 import model.Root;
 import model.WordWithPosition;
 
@@ -21,6 +22,8 @@ public class PMI {
 
         System.out.println("------SHOW FIRST COLUMN WITH POSITION------------");
         wordWithPositionList.forEach(System.out::println);
+        CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
+        coocuranceMatrix.createCoocurance(wordWithPositionList);
     }
 
     private static List<WordWithPosition> convertToWordWithPositionList(Root root) {
