@@ -9,7 +9,8 @@ import java.util.List;
 
 public class PMI {
 
-    public static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_5k";
+    private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_5k";
+    private static final String SENTENCE_STOP_WORD_P = "P";
 
     public static void main(String[] args) throws IOException {
 
@@ -18,7 +19,7 @@ public class PMI {
         List<String> firstColumn = getFirstColumnFromSections(wackypediaSections);
 
         System.out.println("------------------------------------");
-        List<WordWithPosition> wordWithPositionList = convertToWordWithPositionList(wackypediaSections);
+        List<WordWithPosition> wordWithPositionList = convertToWordWithPositionListWithFiltering(wackypediaSections);
 
         System.out.println("------SHOW FIRST COLUMN WITH POSITION------------");
         wordWithPositionList.forEach(System.out::println);
@@ -26,14 +27,17 @@ public class PMI {
         coocuranceMatrix.createCoocurance(wordWithPositionList);
     }
 
-    private static List<WordWithPosition> convertToWordWithPositionList(Root root) {
+    private static List<WordWithPosition> convertToWordWithPositionListWithFiltering(Root root) {
 
         List<WordWithPosition> wordWithPositionList = new ArrayList<>();
-
         int[] position = { 0 };
+
         root.getS().stream().forEach(s -> s.getWord().stream().forEach(s1 -> {
             String[] wordWithDescription = s1.getWord().split("\\s+");
-            wordWithPositionList.add(new WordWithPosition(position[0]++,wordWithDescription[0]));
+
+            if (!wordWithDescription[wordWithDescription.length-1].matches(SENTENCE_STOP_WORD_P)){
+                wordWithPositionList.add(new WordWithPosition(position[0]++,wordWithDescription[0]));
+            }
         }));
 
         return wordWithPositionList;
