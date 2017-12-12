@@ -1,6 +1,7 @@
 import model.CoocuranceMatrix;
 import model.Root;
 import model.WordWithPosition;
+import qa.Questions;
 
 import java.io.*;
 import java.util.List;
@@ -22,6 +23,11 @@ public class PMI {
         wordWithPositionList.forEach(System.out::println);
         CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
         coocuranceMatrix.createCoocurance(wordWithPositionList);
+
+
+        System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");
+        Questions questions = new Questions();
+        questions.getQuestionsAndAnswersFromFile();
     }
 
 }
