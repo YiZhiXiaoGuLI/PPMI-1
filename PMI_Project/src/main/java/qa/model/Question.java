@@ -11,4 +11,8 @@ public class Question {
     private String content;
     private List<Answer> answers;
     private String correctAnswer;
+
+    public Question(String question) {
+        this.question = question;
+    }
 }

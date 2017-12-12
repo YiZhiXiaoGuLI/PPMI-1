@@ -1,10 +1,13 @@
 package qa;
 
+import org.apache.commons.lang3.StringUtils;
 import qa.model.Question;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Questions {
 
@@ -29,7 +32,12 @@ public class Questions {
     public List<Question> getQuestionsAndAnswersFromFile() throws IOException {
         List<Question> questionsWithAnswersList = new ArrayList<>();
 
-        getContentFromFile().forEach(System.out::println);
+//        getContentFromFile().forEach(System.out::println);
+        getContentFromFile().stream().forEach( s ->{
+            questionsWithAnswersList.add(new Question(StringUtils.substringBetween(s,"\"",".")));
+        });
+
+        questionsWithAnswersList.forEach( s-> System.out.println(s.getQuestion()));
 
         return questionsWithAnswersList;
     }
