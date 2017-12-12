@@ -34,7 +34,7 @@ public class Questions {
 
 //        getContentFromFile().forEach(System.out::println);
         getContentFromFile().stream().forEach( s ->{
-            questionsWithAnswersList.add(new Question(StringUtils.substringBetween(s,"\"",".")));
+            questionsWithAnswersList.add(new Question(StringUtils.substringBetween(s,"\"","|")));
         });
 
         questionsWithAnswersList.forEach( s-> System.out.println(s.getQuestion()));
