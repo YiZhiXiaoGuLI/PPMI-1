@@ -21,13 +21,18 @@ public class PMI {
 
         System.out.println("------SHOW FIRST COLUMN WITH POSITION------------");
         wordWithPositionList.forEach(System.out::println);
-        CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
-        coocuranceMatrix.createCoocurance(wordWithPositionList);
+
 
 
         System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");
         Questions questions = new Questions();
         questions.getQuestionsAndAnswersFromFile();
+
+        System.out.println("------------ GET OCCURENCE MATRIX------------------");
+        //TODO: sentencje trzeba zrobic bo raczej są zle - w senise zdania bo robienie matrixa dziala ale mam zle sentencje jakby
+        // potrzebowal bym liste zdan tych logicznych - chyba je wyswietlasz ale niewiem czy to te
+        CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
+        coocuranceMatrix.createCoocurance(wordWithPositionList);
     }
 
 }
