@@ -1,6 +1,6 @@
 import model.CoocuranceMatrix;
 import model.Root;
-import model.WordWithPosition;
+import model.WordModel;
 import qa.Questions;
 
 import java.io.*;
@@ -17,10 +17,10 @@ public class PMI {
         List<String> firstColumn = dataset.getFirstColumnFromSections(wackypediaSections);
 
         System.out.println("------------------------------------");
-        List<WordWithPosition> wordWithPositionList = dataset.convertToWordWithPositionListWithFiltering(wackypediaSections);
+        List<WordModel> wordModelList = dataset.convertToWordWithPositionListWithFiltering(wackypediaSections);
 
         System.out.println("------SHOW FIRST COLUMN WITH POSITION------------");
-        wordWithPositionList.forEach(System.out::println);
+        wordModelList.forEach(System.out::println);
 
 
 
@@ -32,7 +32,7 @@ public class PMI {
         //TODO: sentencje trzeba zrobic bo raczej są zle - w senise zdania bo robienie matrixa dziala ale mam zle sentencje jakby
         // potrzebowal bym liste zdan tych logicznych - chyba je wyswietlasz ale niewiem czy to te
         CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
-        coocuranceMatrix.createCoocurance(wordWithPositionList);
+        coocuranceMatrix.createCoocurance(wordModelList);
     }
 
 }

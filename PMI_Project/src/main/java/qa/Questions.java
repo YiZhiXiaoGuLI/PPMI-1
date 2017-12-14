@@ -1,13 +1,14 @@
 package qa;
 
 import org.apache.commons.lang3.StringUtils;
+import qa.model.Answer;
 import qa.model.Question;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Questions {
 
@@ -33,12 +34,28 @@ public class Questions {
         List<Question> questionsWithAnswersList = new ArrayList<>();
 
 //        getContentFromFile().forEach(System.out::println);
-        getContentFromFile().stream().forEach( s ->{
-            questionsWithAnswersList.add(new Question(StringUtils.substringBetween(s,"\"","|")));
+        getContentFromFile().stream().forEach(s -> {
+            List<String> stringList = Arrays.stream(StringUtils.substringBetween(s, "|", "\"").split("\\|")).collect(Collectors.toList());
+            List<Answer> answers =  new ArrayList<>();
+            stringList.forEach(a -> {
+                answers.add(new Answer(a));
+            });
+            System.out.println(answers);
+            questionsWithAnswersList.add(new Question(StringUtils.substringBetween(s, "\"", "|"),
+                    StringUtils.substringBetween(s, "[", "]")));
+
+            System.out.println("to array: "+ Arrays.toString(StringUtils.substringBetween(s, "|", "\"").split("\\|")));
+
         });
 
-        questionsWithAnswersList.forEach( s-> System.out.println(s.getQuestion()));
+//        questionsWithAnswersList.forEach(s -> System.out.println(s.getQuestion() + " " + s.getContent()));
 
         return questionsWithAnswersList;
+    }
+
+    private static List<Answer> createQuestionAnswers(String s) {
+        List<Answer> answers = new ArrayList<>();
+
+        return answers;
     }
 }

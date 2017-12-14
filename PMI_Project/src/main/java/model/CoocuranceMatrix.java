@@ -1,23 +1,18 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class CoocuranceMatrix {
 
     // słowa bez powtorzen - slownik
-    static public List<WordWithPosition> createLiblary(List<WordWithPosition> allwords)
-    {
-        List<WordWithPosition> deduplicateWords = new ArrayList<>(new LinkedHashSet<>(allwords));
-       return deduplicateWords;
-
+    static public List<WordModel> createLiblary(List<WordModel> allwords) {
+       return allwords.stream().distinct().collect(Collectors.toList());
     }
 
     //tworzenie macierzy coocurencji
-   public int[][] createCoocurance(List<WordWithPosition> allwords)
+   public int[][] createCoocurance(List<WordModel> allwords)
     {
         int x =0;
         int y =0;
@@ -32,7 +27,7 @@ public class CoocuranceMatrix {
 
         }
         //0 i 1
-        List<WordWithPosition> deduplicateWords =createLiblary(allwords);
+        List<WordModel> deduplicateWords =createLiblary(allwords);
         int len = deduplicateWords.size();
         int[][] matrix = new int [len][len];
 
@@ -54,7 +49,7 @@ public class CoocuranceMatrix {
 
 
 
-    static int fingPosition(String key, List<WordWithPosition> allwords)
+    static int fingPosition(String key, List<WordModel> allwords)
     {
         int wynik = 0;
         for(int i=0; i<allwords.size(); i++)

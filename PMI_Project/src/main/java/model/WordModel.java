@@ -5,9 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class WordWithPosition {
+public class WordModel {
 
-    private int position;
     private String word;
 
 }

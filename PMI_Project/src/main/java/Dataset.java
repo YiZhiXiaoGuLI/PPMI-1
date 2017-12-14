@@ -1,6 +1,6 @@
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import model.Root;
-import model.WordWithPosition;
+import model.WordModel;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,20 +11,19 @@ public class Dataset {
     private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_5k";
     private static final String SENTENCE_STOP_WORD_P = "P";
 
-    public List<WordWithPosition> convertToWordWithPositionListWithFiltering(Root root) {
+    public List<WordModel> convertToWordWithPositionListWithFiltering(Root root) {
 
-        List<WordWithPosition> wordWithPositionList = new ArrayList<>();
-        int[] position = {0};
+        List<WordModel> wordModelList = new ArrayList<>();
 
         root.getS().stream().forEach(s -> s.getWord().stream().forEach(s1 -> {
             String[] wordWithDescription = s1.getWord().split("\\s+");
 
             if (!wordWithDescription[wordWithDescription.length - 1].matches(SENTENCE_STOP_WORD_P)) {
-                wordWithPositionList.add(new WordWithPosition(position[0]++, wordWithDescription[0]));
+                wordModelList.add(new WordModel(wordWithDescription[0]));
             }
         }));
 
-        return wordWithPositionList;
+        return wordModelList;
     }
 
     private static void showFirstColumn(List<String> firstColumn) {

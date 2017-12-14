@@ -6,4 +6,8 @@ import lombok.Data;
 public class Answer {
 
     private String content;
+
+    public Answer(String content) {
+        this.content = content;
+    }
 }
