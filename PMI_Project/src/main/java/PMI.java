@@ -19,7 +19,7 @@ public class PMI {
 
         System.out.println("------SHOW SECOND COLUMN WITH FILTERING------------");
         List<Word> wordList = dataset.convertToWordListWithFiltering(wackypediaSections);
-//        wordList.forEach(System.out::println);
+        wordList.forEach(System.out::println);
 
 
         System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");
@@ -30,8 +30,8 @@ public class PMI {
         System.out.println("------------ GET OCCURENCE MATRIX------------------");
         //TODO: sentencje trzeba zrobic bo raczej są zle - w senise zdania bo robienie matrixa dziala ale mam zle sentencje jakby
         // potrzebowal bym liste zdan tych logicznych - chyba je wyswietlasz ale niewiem czy to te
-//        CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
-//        coocuranceMatrix.createCoocurance(wordList);
+        CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
+        coocuranceMatrix.createCoocurance(wordList);
     }
 
 }
