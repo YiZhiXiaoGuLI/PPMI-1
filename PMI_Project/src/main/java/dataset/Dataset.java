@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Dataset {
 
-    private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_5k";
+    private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_15k";
     private static final String SENTENCE_STOP_WORD_P = "P";
 
     public List<Word> convertToWordListWithFiltering(Root root) {
@@ -60,10 +60,8 @@ public class Dataset {
 
         XmlMapper xmlMapper = new XmlMapper();
         String xml = inputStreamToString(new FileInputStream(file));
-        Root root = xmlMapper.readValue(xml, Root.class);
 
-        return root;
-
+        return xmlMapper.readValue(xml, Root.class);
     }
 
     public void showAllSections(Root root) {
