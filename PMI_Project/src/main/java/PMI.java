@@ -1,6 +1,7 @@
-import model.CoocuranceMatrix;
-import model.Root;
-import model.Word;
+import dataset.Dataset;
+import matrix.CoocuranceMatrix;
+import dataset.model.Root;
+import dataset.model.Word;
 import qa.Questions;
 
 import java.io.*;

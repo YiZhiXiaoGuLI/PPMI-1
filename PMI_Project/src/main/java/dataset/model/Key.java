@@ -1,4 +1,4 @@
-package model;
+package dataset.model;
 
 public class Key {
     String smallKey1;

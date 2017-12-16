@@ -1,6 +1,8 @@
+package dataset;
+
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import model.Root;
-import model.Word;
+import dataset.model.Root;
+import dataset.model.Word;
 
 import java.io.*;
 import java.util.ArrayList;

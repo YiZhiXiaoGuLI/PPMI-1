@@ -1,4 +1,7 @@
-package model;
+package matrix;
+
+import dataset.model.Key;
+import dataset.model.Word;
 
 import java.util.ArrayList;
 import java.util.List;
