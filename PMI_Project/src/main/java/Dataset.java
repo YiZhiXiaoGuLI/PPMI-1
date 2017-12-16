@@ -1,6 +1,6 @@
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import model.Root;
-import model.WordModel;
+import model.Word;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,32 +11,32 @@ public class Dataset {
     private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_5k";
     private static final String SENTENCE_STOP_WORD_P = "P";
 
-    public List<WordModel> convertToWordWithPositionListWithFiltering(Root root) {
+    public List<Word> convertToWordListWithFiltering(Root root) {
 
-        List<WordModel> wordModelList = new ArrayList<>();
+        List<Word> wordList = new ArrayList<>();
 
-        root.getS().stream().forEach(s -> s.getWord().stream().forEach(s1 -> {
+        root.getS().forEach(s -> s.getWord().forEach(s1 -> {
             String[] wordWithDescription = s1.getWord().split("\\s+");
 
             if (!wordWithDescription[wordWithDescription.length - 1].matches(SENTENCE_STOP_WORD_P)) {
-                wordModelList.add(new WordModel(wordWithDescription[0]));
+                wordList.add(new Word(wordWithDescription[1]));
             }
         }));
 
-        return wordModelList;
+        return wordList;
     }
 
     private static void showFirstColumn(List<String> firstColumn) {
         firstColumn.forEach(System.out::println);
     }
 
-    public List<String> getFirstColumnFromSections(Root root) {
+    public List<String> getSecondColumnFromSections(Root root) {
 
         List<String> firstColumn = new ArrayList<>();
 
-        root.getS().stream().forEach(s -> s.getWord().stream().forEach(s1 -> {
-            String[] wordWithDescription = s1.getWord().toString().split("\\s+");
-            firstColumn.add(wordWithDescription[0]);
+        root.getS().forEach(s -> s.getWord().forEach(s1 -> {
+            String[] wordWithDescription = s1.getWord().split("\\s+");
+            firstColumn.add(wordWithDescription[1]);
         }));
 
         return firstColumn;
@@ -65,7 +65,7 @@ public class Dataset {
     }
 
     public void showAllSections(Root root) {
-        root.getS().stream().forEach(s -> s.getWord().stream().forEach(s1 -> System.out.println(s1.getWord())));
+        root.getS().forEach(s -> s.getWord().forEach(s1 -> System.out.println(s1.getWord())));
     }
 
 }

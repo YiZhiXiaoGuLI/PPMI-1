@@ -1,6 +1,6 @@
 import model.CoocuranceMatrix;
 import model.Root;
-import model.WordModel;
+import model.Word;
 import qa.Questions;
 
 import java.io.*;
@@ -13,20 +13,22 @@ public class PMI {
         Dataset dataset = new Dataset();
 
         Root wackypediaSections = dataset.getWackypediaSections();
-        dataset.showAllSections(wackypediaSections);
-        List<String> firstColumn = dataset.getFirstColumnFromSections(wackypediaSections);
+//        dataset.showAllSections(wackypediaSections);
+//        List<String> firstColumn = dataset.getSecondColumnFromSections(wackypediaSections);
+
 
         System.out.println("------------------------------------");
-        List<WordModel> wordModelList = dataset.convertToWordWithPositionListWithFiltering(wackypediaSections);
+        List<Word> wordModelList = dataset.convertToWordListWithFiltering(wackypediaSections);
 
-        System.out.println("------SHOW FIRST COLUMN WITH POSITION------------");
+
+        System.out.println("------SHOW SECOND COLUMN WITH FILTERING------------");
         wordModelList.forEach(System.out::println);
-
 
 
         System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");
         Questions questions = new Questions();
-        questions.getQuestionsAndAnswersFromFile();
+        questions.getESLQuestionsAndAnswers();
+
 
         System.out.println("------------ GET OCCURENCE MATRIX------------------");
         //TODO: sentencje trzeba zrobic bo raczej są zle - w senise zdania bo robienie matrixa dziala ale mam zle sentencje jakby

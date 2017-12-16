@@ -1,10 +1,12 @@
 package qa.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 public class Question {
 
     private String question;
@@ -12,18 +14,4 @@ public class Question {
     private List<Answer> answers;
     private String correctAnswer;
 
-    public Question(String question) {
-        this.question = question;
-    }
-
-    public Question(String question, String content) {
-        this.question = question;
-        this.content = content;
-    }
-
-    public Question(String question, String content, List<Answer> answers) {
-        this.question = question;
-        this.content = content;
-        this.answers = answers;
-    }
 }

@@ -7,12 +7,12 @@ import java.util.stream.Collectors;
 public class CoocuranceMatrix {
 
     // słowa bez powtorzen - slownik
-    static public List<WordModel> createLiblary(List<WordModel> allwords) {
+    static public List<Word> createLiblary(List<Word> allwords) {
        return allwords.stream().distinct().collect(Collectors.toList());
     }
 
     //tworzenie macierzy coocurencji
-   public int[][] createCoocurance(List<WordModel> allwords)
+   public int[][] createCoocurance(List<Word> allwords)
     {
         int x =0;
         int y =0;
@@ -27,7 +27,7 @@ public class CoocuranceMatrix {
 
         }
         //0 i 1
-        List<WordModel> deduplicateWords =createLiblary(allwords);
+        List<Word> deduplicateWords =createLiblary(allwords);
         int len = deduplicateWords.size();
         int[][] matrix = new int [len][len];
 
@@ -49,7 +49,7 @@ public class CoocuranceMatrix {
 
 
 
-    static int fingPosition(String key, List<WordModel> allwords)
+    static int fingPosition(String key, List<Word> allwords)
     {
         int wynik = 0;
         for(int i=0; i<allwords.size(); i++)
