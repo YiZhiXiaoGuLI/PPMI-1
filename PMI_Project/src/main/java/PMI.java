@@ -14,7 +14,7 @@ public class PMI {
         Dataset dataset = new Dataset();
 
         Root wackypediaSections = dataset.getWackypediaSections();
-//        dataset.showAllSections(wackypediaSections);
+        dataset.showAllSections(wackypediaSections);
 //        List<String> firstColumn = dataset.getSecondColumnFromSections(wackypediaSections);
 
 
