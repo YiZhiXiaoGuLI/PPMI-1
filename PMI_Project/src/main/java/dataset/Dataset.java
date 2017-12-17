@@ -12,7 +12,7 @@ import java.util.List;
 public class Dataset {
 
     private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_15k";
-    private static final String PATH_TO_WACKYPEDIA_FILE_WITHOUT_XML = "src/main/resources/public/wackypedia_en1_100k_without_text";
+    private static final String PATH_TO_WACKYPEDIA_FILE_WITHOUT_XML = "src/main/resources/public/wackypedia_en1_300k_without_text";
     private static final String SENTENCE_STOP_WORD_P = "P";
 
     public List<Word> getAllWords(Root root) {

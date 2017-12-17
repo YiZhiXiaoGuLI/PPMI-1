@@ -15,7 +15,7 @@ public class CoocuranceMatrix {
     }
 
     //tworzenie macierzy coocurencji
-   public int[][] createCoocurance(List<Word> allwords)
+   public short[][] createCoocurance(List<Word> allwords)
     {
         int x =0;
         int y =0;
@@ -32,7 +32,7 @@ public class CoocuranceMatrix {
         //0 i 1
         List<Word> deduplicateWords =createLiblary(allwords);
         int len = deduplicateWords.size();
-        int[][] matrix = new int [len][len];
+        short[][] matrix = new short [len][len];
 
         for(int i=0; i<keys.size(); i++)
         {
@@ -67,12 +67,12 @@ public class CoocuranceMatrix {
         return wynik;
     }
 
-    void printMatrix(int[][] matrix, int len)
+    void printMatrix(short[][] matrix, int len)
     {
         for(int i =0; i<len;i++)
         {
             for (int j=0; j<len; j++) {
-                System.out.print(matrix[i][j]);
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println("");
         }
