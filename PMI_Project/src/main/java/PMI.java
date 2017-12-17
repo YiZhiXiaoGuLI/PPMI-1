@@ -1,7 +1,7 @@
 import dataset.Dataset;
-import matrix.CoocuranceMatrix;
 import dataset.model.Root;
 import dataset.model.Word;
+import matrix.CoocuranceMatrix;
 import qa.Questions;
 
 import java.io.*;
@@ -13,14 +13,13 @@ public class PMI {
     public static void main(String[] args) throws IOException {
         Dataset dataset = new Dataset();
 
-        Root wackypediaSections = dataset.getWackypediaSections();
+//        Root wackypediaSections = dataset.getWackypediaSections();
+        Root wackypediaSections = dataset.getWackypediaSectionsWithoutXml();
         dataset.showAllSections(wackypediaSections);
-//        List<String> firstColumn = dataset.getSecondColumnFromSections(wackypediaSections);
-
 
         System.out.println("------SHOW SECOND COLUMN WITH FILTERING------------");
-        List<Word> wordList = dataset.convertToWordListWithFiltering(wackypediaSections);
-        wordList.forEach(System.out::println);
+        List<Word> wordList = dataset.getAllWords(wackypediaSections);
+//        wordList.forEach(System.out::println);
 
 
         System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");

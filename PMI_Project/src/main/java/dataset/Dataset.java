@@ -2,6 +2,7 @@ package dataset;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import dataset.model.Root;
+import dataset.model.Sections;
 import dataset.model.Word;
 
 import java.io.*;
@@ -11,20 +12,15 @@ import java.util.List;
 public class Dataset {
 
     private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_15k";
+    private static final String PATH_TO_WACKYPEDIA_FILE_WITHOUT_XML = "src/main/resources/public/wackypedia_en1_100k_without_text";
     private static final String SENTENCE_STOP_WORD_P = "P";
 
-    public List<Word> convertToWordListWithFiltering(Root root) {
+    public List<Word> getAllWords(Root root) {
 
         List<Word> wordList = new ArrayList<>();
-
         root.getS().forEach(s -> s.getWord().forEach(s1 -> {
-            String[] wordWithDescription = s1.getWord().split("\\s+");
-
-            if (!wordWithDescription[wordWithDescription.length - 1].matches(SENTENCE_STOP_WORD_P)) {
-                wordList.add(new Word(wordWithDescription[1]));
-            }
+            wordList.add(new Word(s1.getWord()));
         }));
-
         return wordList;
     }
 
@@ -63,6 +59,48 @@ public class Dataset {
 
         return xmlMapper.readValue(xml, Root.class);
     }
+
+    public Root inputStreamToStringWithoutXml(InputStream is) throws IOException {
+        String line;
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+        Root root = new Root();
+        Sections sections = new Sections();
+        List<Sections> sectionsList = new ArrayList<>();
+        List<Word> wordList = new ArrayList<>();
+
+        while ((line = br.readLine()) != null) {
+
+            if (line.contains("<s>")) {
+                sections = new Sections();
+                wordList = new ArrayList<>();
+            }
+
+            if (!line.contains("<s>") && !line.contains("</s>")) {
+
+                String[] wordWithDescription = line.split("\\s+");
+                if (!wordWithDescription[wordWithDescription.length - 1].matches(SENTENCE_STOP_WORD_P)) {
+                    Word word = new Word(wordWithDescription[1]);
+                    wordList.add(word);
+                }
+            }
+
+            if (line.contains("</s>")) {
+                sections.setWord(new ArrayList<>(wordList));
+                wordList.clear();
+                sectionsList.add(sections);
+            }
+        }
+        br.close();
+        root.setS(sectionsList);
+        return root;
+    }
+
+    public Root getWackypediaSectionsWithoutXml() throws IOException {
+        File file = new File(PATH_TO_WACKYPEDIA_FILE_WITHOUT_XML);
+        return inputStreamToStringWithoutXml(new FileInputStream(file));
+    }
+
 
     public void showAllSections(Root root) {
         root.getS().forEach(s -> s.getWord().forEach(s1 -> System.out.println(s1.getWord())));
