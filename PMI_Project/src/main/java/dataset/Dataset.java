@@ -73,7 +73,6 @@ public class Dataset {
 
             if (line.contains("<s>")) {
                 sections = new Sections();
-                wordList = new ArrayList<>();
             }
 
             if (!line.contains("<s>") && !line.contains("</s>")) {
