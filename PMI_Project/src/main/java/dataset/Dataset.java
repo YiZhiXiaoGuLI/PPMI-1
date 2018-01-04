@@ -3,10 +3,16 @@ package dataset;
 import dataset.model.Root;
 import dataset.model.Sections;
 import dataset.model.Word;
+import qa.Questions;
+import qa.model.Question;
+import qa.model.Type;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Dataset {
 
@@ -95,4 +101,23 @@ public class Dataset {
         root.getS().forEach(s -> s.getWord().forEach(s1 -> System.out.println(s1.getWord())));
     }
 
+    public List<Word> getAllWordsWithQuestionWord(List<Word> wordList, Questions questions) throws IOException {
+
+        List<String> questionList = questions.getAllQuestions().stream().filter(s -> s.getType().equals(Type.ESL))
+                .map(Question::getQuestion).collect(Collectors.toList());
+
+        List<Word> listQuestionWords = new ArrayList<>();
+
+        questionList.forEach(s -> {
+            s = s.replace(".", "");
+            s = s.replace("[", "");
+            s = s.replace("]", "");
+            String[] questionWords = s.split("\\s+");
+            Arrays.stream(questionWords).forEach(qw -> {
+                listQuestionWords.add(new Word(qw));
+            });
+        });
+
+        return Stream.concat(wordList.stream(), listQuestionWords.stream()).collect(Collectors.toList());
+    }
 }

@@ -14,17 +14,20 @@ public class PMI {
         Dataset dataset = new Dataset();
 
         Root wackypediaSections = dataset.getWackypediaSectionsWithoutXml();
-//        dataset.showAllSections(wackypediaSections);
+//      //dataset.showAllSections(wackypediaSections);
 
         System.out.println("------SHOW SECOND COLUMN WITH FILTERING------------");
         List<Word> wordList = dataset.getAllWords(wackypediaSections);
-        wordList.forEach(System.out::println);
+//      //wordList.forEach(System.out::println);
 
 
         System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");
         Questions questions = new Questions();
         questions.getAllQuestions().forEach(System.out::println);
 
+
+        System.out.println("------------ ADD Question to Initial Dataset [LIBRARY] ------------");
+        wordList = dataset.getAllWordsWithQuestionWord(wordList, questions); // all words with question words // to check algorithm
 
         System.out.println("------------ GET OCCURENCE MATRIX------------------");
         //TODO: sentencje trzeba zrobic bo raczej są zle - w senise zdania bo robienie matrixa dziala ale mam zle sentencje jakby
