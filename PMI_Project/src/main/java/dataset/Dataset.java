@@ -1,6 +1,5 @@
 package dataset;
 
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import dataset.model.Root;
 import dataset.model.Sections;
 import dataset.model.Word;
@@ -11,7 +10,6 @@ import java.util.List;
 
 public class Dataset {
 
-    private static final String PATH_TO_WACKYPEDIA_FILE = "src/main/resources/public/wackypedia_en1_with_root_word_15k";
     private static final String PATH_TO_WACKYPEDIA_FILE_WITHOUT_XML = "src/main/resources/public/wackypedia_en1_300k_without_text";
     private static final String SENTENCE_STOP_WORD_P = "P";
 
@@ -51,14 +49,6 @@ public class Dataset {
         return sb.toString();
     }
 
-    public Root getWackypediaSections() throws IOException {
-        File file = new File(PATH_TO_WACKYPEDIA_FILE);
-
-        XmlMapper xmlMapper = new XmlMapper();
-        String xml = inputStreamToString(new FileInputStream(file));
-
-        return xmlMapper.readValue(xml, Root.class);
-    }
 
     public Root inputStreamToStringWithoutXml(InputStream is) throws IOException {
         String line;

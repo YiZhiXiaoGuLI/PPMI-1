@@ -13,13 +13,12 @@ public class PMI {
     public static void main(String[] args) throws IOException {
         Dataset dataset = new Dataset();
 
-//        Root wackypediaSections = dataset.getWackypediaSections();
         Root wackypediaSections = dataset.getWackypediaSectionsWithoutXml();
-        dataset.showAllSections(wackypediaSections);
+//        dataset.showAllSections(wackypediaSections);
 
         System.out.println("------SHOW SECOND COLUMN WITH FILTERING------------");
         List<Word> wordList = dataset.getAllWords(wackypediaSections);
-//        wordList.forEach(System.out::println);
+        wordList.forEach(System.out::println);
 
 
         System.out.println("------------ GET QUESTIONS AND ANSWERS FROM FILE------------------");
