@@ -36,8 +36,8 @@ public class CoocuranceMatrix {
 
         for(int i=0; i<keys.size(); i++)
         {
-            x= fingPosition(keys.get(i).getSmallKey1(),deduplicateWords);
-            y= fingPosition(keys.get(i).getSmallKey2(),deduplicateWords);
+            x= findPosition(keys.get(i).getSmallKey1(),deduplicateWords);
+            y= findPosition(keys.get(i).getSmallKey2(),deduplicateWords);
             matrix[x][y]++;
         }
 
@@ -45,19 +45,19 @@ public class CoocuranceMatrix {
 
 
 
-        printMatrix(matrix,len);
+      //  printMatrix(matrix,len);
 
         return matrix;
     }
 
 
 
-    static int fingPosition(String key, List<Word> allwords)
+    static int findPosition(String key, List<Word> deduplicatewords)
     {
         int wynik = 0;
-        for(int i=0; i<allwords.size(); i++)
+        for(int i=0; i<deduplicatewords.size(); i++)
         {
-            if(key.equals(allwords.get(i).getWord()))
+            if(key.equals(deduplicatewords.get(i).getWord()))
             {
 
                 wynik = i;
