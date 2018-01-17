@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class CoocuranceMatrix {
 
     // słowa bez powtorzen - slownik
-    static public List<Word> createLiblary(List<Word> allwords) {
+   static public List<Word> createLiblary(List<Word> allwords) {
        return allwords.stream().distinct().collect(Collectors.toList());
     }
 
@@ -67,11 +67,12 @@ public class CoocuranceMatrix {
         return wynik;
     }
 
-    void printMatrix(short[][] matrix, int len)
+    public void printMatrix(short[][] matrix, int len)
     {
         for(int i =0; i<len;i++)
         {
             for (int j=0; j<len; j++) {
+                if(matrix[i][j]>0)
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println("");
