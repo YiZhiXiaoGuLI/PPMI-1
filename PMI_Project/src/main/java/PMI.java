@@ -37,8 +37,15 @@ public class PMI {
         CoocuranceMatrix coocuranceMatrix = new CoocuranceMatrix();
         //coocuranceMatrix.createCoocurance(wordList);
 
-        //todo: do metody przerobic
         PPMI ppmi = new PPMI();
+        calculatePPMI(wordList, coocuranceMatrix, ppmi);
+
+
+
+
+    }
+
+    private static void calculatePPMI(List<Word> wordList, CoocuranceMatrix coocuranceMatrix, PPMI ppmi) {
         List<Word> wordListwithNoRep = coocuranceMatrix.createLiblary(wordList);
         short[][] coocurnaceMatrixxx = coocuranceMatrix.createCoocurance(wordList);
         coocuranceMatrix.printMatrix(coocurnaceMatrixxx, wordListwithNoRep.size());
@@ -63,10 +70,6 @@ public class PMI {
             }
             System.out.println("");
         }
-
-
-
-
     }
 
 }
