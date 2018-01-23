@@ -1,0 +1,2 @@
+wynik obliczen : haltingly,  dla pytania 'normally'  Poprawna odpowedz: Answer(content=b)
+

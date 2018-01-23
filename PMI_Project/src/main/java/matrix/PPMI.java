@@ -44,7 +44,7 @@ public class PPMI {
 
         PMI = (float) Math.log((coocurenceMatrix[x][y])/(probability(word1, allwords)*probability(word2,allwords)));
       if(coocurenceMatrix[x][y]>0) {
-          System.out.println("PMI=log(" +coocurenceMatrix[x][y] +")/ ("+ probability(word1,allwords)+")*("+probability(word2,allwords)+")");
+           //System.out.println("PMI=log(" +coocurenceMatrix[x][y] +")/ ("+ probability(word1,allwords)+")*("+probability(word2,allwords)+")");
 //          System.out.println("cooc" + coocurenceMatrix[x][y]);
         //  System.out.println("multi" + (coocurenceMatrix[x][y])/(probability(word1, allwords)*probability(word2,allwords))*10);
 

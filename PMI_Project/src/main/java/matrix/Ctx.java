@@ -2,10 +2,10 @@ package matrix;
 
 public class Ctx {
 
-    float multipleTopVectors(float[][] tab, int v1, int v2)
+    double multipleTopVectors(double[][] tab, int v1, int v2)
     {
         int quantitycolumn = tab[0].length;
-        float wynik =0;
+        double wynik =0;
         for(int i=0; i<quantitycolumn;i++)
         {
             wynik += tab[v1][i]*tab[v2][i];
@@ -14,11 +14,11 @@ public class Ctx {
 
     }
 
-    float calculateDenominator(float[][] tab, int v1, int v2)
+    double calculateDenominator(double[][] tab, int v1, int v2)
     {
         int quantitycolumn = tab[0].length;
-        float VR1 =0;
-        float VR2 =0;
+        double VR1 =0;
+        double VR2 =0;
 
         for(int i=0; i<quantitycolumn;i++)
         {
@@ -29,11 +29,11 @@ public class Ctx {
         double w1 = Math.sqrt((double)VR1);
         double w2 = Math.sqrt((double)VR2);
 
-        float wynik = (float)w1 * (float)w2;
+        double wynik = w1 * w2;
         return wynik;
     }
 
-    float cosinusSimilarity(float[][] tab, int v1, int v2)
+    public double cosinusSimilarity(double[][] tab, int v1, int v2)
     {
         return  (multipleTopVectors(tab, v1,  v2))/(calculateDenominator(tab, v1, v2));
     }

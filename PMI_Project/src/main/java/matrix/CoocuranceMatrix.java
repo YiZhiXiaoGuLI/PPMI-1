@@ -52,7 +52,7 @@ public class CoocuranceMatrix {
 
 
 
-    static int findPosition(String key, List<Word> deduplicatewords)
+    public static int findPosition(String key, List<Word> deduplicatewords)
     {
         int wynik = 0;
         for(int i=0; i<deduplicatewords.size(); i++)
