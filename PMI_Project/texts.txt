@@ -1,2 +1,260 @@
+wynik obliczen : corroded,  dla pytania 'rusty'  Poprawna odpowedz: corroded
+
+wynik obliczen : metal,  dla pytania 'brass'  Poprawna odpowedz: metal
+
+wynik obliczen : twirl,  dla pytania 'spin'  Poprawna odpowedz: twirl
+
+wynik obliczen : ticket,  dla pytania 'passage'  Poprawna odpowedz: hallway
+
+wynik obliczen : scorn,  dla pytania 'yield'  Poprawna odpowedz: submit
+
+wynik obliczen : cushion,  dla pytania 'lean'  Poprawna odpowedz: cushion
+
+wynik obliczen : cask,  dla pytania 'barrel'  Poprawna odpowedz: cask
+
+wynik obliczen : garbage,  dla pytania 'nuisance'  Poprawna odpowedz: pest
+
+wynik obliczen : carpet,  dla pytania 'rug'  Poprawna odpowedz: carpet
+
+wynik obliczen : drain,  dla pytania 'tap'  Poprawna odpowedz: drain
+
+wynik obliczen : divided,  dla pytania 'split'  Poprawna odpowedz: divided
+
+wynik obliczen : chunk,  dla pytania 'lump'  Poprawna odpowedz: chunk
+
+wynik obliczen : pair,  dla pytania 'outline'  Poprawna odpowedz: contour
+
+wynik obliczen : vow,  dla pytania 'swear'  Poprawna odpowedz: vow
+
+wynik obliczen : rested,  dla pytania 'relieved'  Poprawna odpowedz: rested
+
+wynik obliczen : merit,  dla pytania 'deserve'  Poprawna odpowedz: merit
+
+wynik obliczen : hurry,  dla pytania 'haste'  Poprawna odpowedz: hurry
+
+wynik obliczen : firm,  dla pytania 'stiff'  Poprawna odpowedz: firm
+
+wynik obliczen : section,  dla pytania 'verse'  Poprawna odpowedz: section
+
+wynik obliczen : sheer,  dla pytania 'steep'  Poprawna odpowedz: sheer
+
+wynik obliczen : jealous,  dla pytania 'envious'  Poprawna odpowedz: jealous
+
+wynik obliczen : dough,  dla pytania 'paste'  Poprawna odpowedz: dough
+
+wynik obliczen : refuse,  dla pytania 'scorn'  Poprawna odpowedz: refuse
+
+wynik obliczen : direct,  dla pytania 'refer'  Poprawna odpowedz: direct
+
+wynik obliczen : branch,  dla pytania 'limb'  Poprawna odpowedz: branch
+
+wynik obliczen : cushion,  dla pytania 'pad'  Poprawna odpowedz: cushion
+
+wynik obliczen : brag,  dla pytania 'boast'  Poprawna odpowedz: brag
+
+wynik obliczen : approval,  dla pytania 'applause'  Poprawna odpowedz: approval
+
+wynik obliczen : book,  dla pytania 'sheet'  Poprawna odpowedz: leaf
+
+wynik obliczen : stalk,  dla pytania 'stem'  Poprawna odpowedz: stalk
+
+wynik obliczen : take,  dla pytania 'seize'  Poprawna odpowedz: take
+
+wynik obliczen : chest,  dla pytania 'trunk'  Poprawna odpowedz: chest
+
+wynik obliczen : vegetable,  dla pytania 'weed'  Poprawna odpowedz: plant
+
+wynik obliczen : endorsement,  dla pytania 'approval'  Poprawna odpowedz: endorsement
+
+wynik obliczen : worship,  dla pytania 'mass'  Poprawna odpowedz: lump
+
+wynik obliczen : sway,  dla pytania 'swing'  Poprawna odpowedz: sway
+
+wynik obliczen : painful,  dla pytania 'sore'  Poprawna odpowedz: painful
+
+wynik obliczen : block,  dla pytania 'hinder'  Poprawna odpowedz: block
+
+wynik obliczen : gooey,  dla pytania 'sticky'  Poprawna odpowedz: gooey
+
+wynik obliczen : service,  dla pytania 'confession'  Poprawna odpowedz: statement
+
+wynik obliczen : intertwine,  dla pytania 'weave'  Poprawna odpowedz: intertwine
+
+wynik obliczen : dish,  dla pytania 'saucer'  Poprawna odpowedz: dish
+
+wynik obliczen : posture,  dla pytania 'substance'  Poprawna odpowedz: thing
+
+wynik obliczen : steadfastly,  dla pytania 'firmly'  Poprawna odpowedz: steadfastly
+
+wynik obliczen : intertwine,  dla pytania 'twist'  Poprawna odpowedz: intertwine
+
+wynik obliczen : grate,  dla pytania 'scrape'  Poprawna odpowedz: grate
+
+wynik obliczen : rub,  dla pytania 'grind'  Poprawna odpowedz: rub
+
+wynik obliczen : enlarge,  dla pytania 'swell'  Poprawna odpowedz: enlarge
+
+wynik obliczen : stem,  dla pytania 'harvest'  Poprawna odpowedz: intake
+
+wynik obliczen : support,  dla pytania 'approve'  Poprawna odpowedz: support
+
+wynik obliczen : appropriately,  dla pytania 'enormously'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : stipulations,  dla pytania 'provisions'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : dangerously,  dla pytania 'haphazardly'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : battered,  dla pytania 'prominent'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : completion,  dla pytania 'zenith'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : lustrous,  dla pytania 'flawed'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : typically,  dla pytania 'urgently'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : bred,  dla pytania 'consumed'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : coming,  dla pytania 'advent'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : powerfully,  dla pytania 'concisely'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : ceremonies,  dla pytania 'salutes'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : restless,  dla pytania 'solitary'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : accelerate,  dla pytania 'hasten'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : endurance,  dla pytania 'perseverance'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : familiar,  dla pytania 'fanciful'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : demonstrated,  dla pytania 'showed'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : continually,  dla pytania 'constantly'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : salaries,  dla pytania 'issues'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : impress,  dla pytania 'furnish'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : beautiful,  dla pytania 'costly'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : depicted,  dla pytania 'recognized'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : location,  dla pytania 'spot'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : earn,  dla pytania 'make'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : frequently,  dla pytania 'often'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : boring,  dla pytania 'easygoing'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : war,  dla pytania 'debate'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : clear,  dla pytania 'narrow'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : explained,  dla pytania 'arranged'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : limitless,  dla pytania 'infinite'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : prickly,  dla pytania 'showy'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : imposed,  dla pytania 'levied'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : skillfully,  dla pytania 'deftly'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : commercialize,  dla pytania 'distribute'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : weights,  dla pytania 'discrepancies'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : promising,  dla pytania 'prolific'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : unrecognized,  dla pytania 'unmatched'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : uniquely,  dla pytania 'peculiarly'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : glare,  dla pytania 'hue'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : curved,  dla pytania 'hind'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : alter,  dla pytania 'highlight'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : hurriedly,  dla pytania 'hastily'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : windy,  dla pytania 'temperate'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : joke,  dla pytania 'grin'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : orally,  dla pytania 'verbally'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : chemist,  dla pytania 'physician'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : eagerly,  dla pytania 'essentially'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : useful,  dla pytania 'keen'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : rotating,  dla pytania 'situated'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : most,  dla pytania 'principal'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : rarely,  dla pytania 'slowly'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : constructed,  dla pytania 'built'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : customers,  dla pytania 'tasks'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : improbable,  dla pytania 'unlikely'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : customarily,  dla pytania 'halfheartedly'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : homes,  dla pytania 'annals'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : distinctively,  dla pytania 'wildly'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : judged,  dla pytania 'hailed'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : observation,  dla pytania 'command'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : devised,  dla pytania 'concocted'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : prudent,  dla pytania 'prospective'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : descriptively,  dla pytania 'generally'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : prolonged,  dla pytania 'sustained'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : binding,  dla pytania 'perilous'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : peacefulness,  dla pytania 'tranquillity'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : disperse,  dla pytania 'dissipate'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : cautiously,  dla pytania 'primarily'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : recorded,  dla pytania 'colloquial'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : publicized,  dla pytania 'resolved'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : permitted,  dla pytania 'feasible'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : frequently,  dla pytania 'expeditiously'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : proportion,  dla pytania 'percentage'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : ended,  dla pytania 'terminated'  Poprawna odpowedz: Answer(content=a)
+
+wynik obliczen : alike,  dla pytania 'uniform'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : list,  dla pytania 'figure'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : enough,  dla pytania 'sufficient'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : manner,  dla pytania 'fashion'  Poprawna odpowedz: Answer(content=d)
+
+wynik obliczen : frozen,  dla pytania 'marketed'  Poprawna odpowedz: Answer(content=b)
+
+wynik obliczen : steadier,  dla pytania 'bigger'  Poprawna odpowedz: Answer(content=c)
+
+wynik obliczen : origins,  dla pytania 'roots'  Poprawna odpowedz: Answer(content=a)
+
 wynik obliczen : haltingly,  dla pytania 'normally'  Poprawna odpowedz: Answer(content=b)
 

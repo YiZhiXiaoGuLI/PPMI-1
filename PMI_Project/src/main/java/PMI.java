@@ -106,6 +106,7 @@ public class PMI {
 
 
 
+        try(PrintWriter out = new PrintWriter("texts.txt")  ){
         for(int i=0; i<questionV.size(); i++)
         {
             int Q = findPosition(questionV.get(i),alfabet);
@@ -123,7 +124,7 @@ public class PMI {
 
             String text = ("wynik obliczen : "+ answers.get(i)[wyn] + ",  dla pytania '" + questionV.get(i)+ "'  Poprawna odpowedz: " + goodAnswer.get(i)+"\n");
 
-            try(PrintWriter out = new PrintWriter("texts.txt")  ){
+
                 out.println(text);
             }
 
