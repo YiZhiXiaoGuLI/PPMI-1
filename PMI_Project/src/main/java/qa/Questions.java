@@ -94,6 +94,7 @@ public class Questions {
 
         ///merge 4 answersLists to 1 finalListAnswersForQuestion
         final int[] iterator = {0};
+        final String[] correctCharAnswer = new String[1];
         questionsWithAnswersList.forEach(s -> {
             allAnswersForQuestion.add(aAnswers.get(iterator[0]));
             allAnswersForQuestion.add(bAnswers.get(iterator[0]));
@@ -101,7 +102,19 @@ public class Questions {
             allAnswersForQuestion.add(dAnswers.get(iterator[0]));
             s.setAnswers(new ArrayList<>(allAnswersForQuestion));
             allAnswersForQuestion.clear();
-            s.setCorrectAnswer(String.valueOf(correct_answers.get(iterator[0])));
+            correctCharAnswer[0] = String.valueOf(correct_answers.get(iterator[0]));
+            if(correctCharAnswer[0].endsWith("a)")) {
+                s.setCorrectAnswer(String.valueOf(aAnswers.get(iterator[0])));
+            }
+            if(correctCharAnswer[0].endsWith("b)")) {
+                s.setCorrectAnswer(String.valueOf(bAnswers.get(iterator[0])));
+            }
+            if(correctCharAnswer[0].endsWith("c)")) {
+                s.setCorrectAnswer(String.valueOf(cAnswers.get(iterator[0])));
+            }
+            if(correctCharAnswer[0].endsWith("d)")) {
+                s.setCorrectAnswer(String.valueOf(dAnswers.get(iterator[0])));
+            }
             iterator[0]++;
         });
 

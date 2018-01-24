@@ -4,6 +4,7 @@ import dataset.model.Word;
 import matrix.CoocuranceMatrix;
 import matrix.Ctx;
 import matrix.PPMI;
+import org.apache.commons.lang3.StringUtils;
 import qa.Questions;
 
 import java.io.*;
@@ -37,11 +38,10 @@ public class PMI {
         System.out.println(questions.getAllQuestions().get(0).getCorrectAnswer());
 
         List<String> questionV = new ArrayList<String>();
-        List<String> correctAnswer =  new ArrayList<String>();
+        List<String> correctAnswer = new ArrayList<String>();
         List<String[]> answers = new ArrayList<String[]>();
 
-        for(int i=0; i<questions.getAllQuestions().size(); i++)
-        {
+        for (int i = 0; i < questions.getAllQuestions().size(); i++) {
             questionV.add(questions.getAllQuestions().get(i).getContent());
             String[] tabAnswers = new String[4];
             tabAnswers[0] = questions.getAllQuestions().get(i).getAnswers().get(0).getContent();
@@ -68,8 +68,6 @@ public class PMI {
         calculatePPMI(wordList, coocuranceMatrix, ppmi, questionV, correctAnswer, answers);
 
 
-
-
     }
 
     private static void calculatePPMI(List<Word> wordList, CoocuranceMatrix coocuranceMatrix, PPMI ppmi, List<String> questionV, List<String> goodAnswer, List<String[]> answers) throws FileNotFoundException {
@@ -77,14 +75,13 @@ public class PMI {
         short[][] coocurnaceMatrixxx = coocuranceMatrix.createCoocurance(wordList);
         coocuranceMatrix.printMatrix(coocurnaceMatrixxx, wordListwithNoRep.size());
 
-        double[][] ppmiMatrix = new double [wordListwithNoRep.size()][wordListwithNoRep.size()];
+        double[][] ppmiMatrix = new double[wordListwithNoRep.size()][wordListwithNoRep.size()];
 
-        System.out.println("AAA");
+        long ppmiMatrixLength = ppmiMatrix.length;
 
-        for(int i =0; i<10003;i++)
-        {
-            for (int j=0; j<10003; j++) {
-                if(coocurnaceMatrixxx[i][j]>0) {
+        for (int i = 0; i < ppmiMatrixLength; i++) {
+            for (int j = 0; j < ppmiMatrixLength; j++) {
+                if (coocurnaceMatrixxx[i][j] > 0) {
                     //System.out.print(coocurnaceMatrixxx[i][j] + " ");
                     ppmiMatrix[i][j] = ppmi.calculatePPMI(wordListwithNoRep.get(i).getWord(), wordListwithNoRep.get(j).getWord(), wordList, coocurnaceMatrixxx, wordListwithNoRep);
 
@@ -101,46 +98,55 @@ public class PMI {
         calculateAnswers(ppmiMatrix, questionV, goodAnswer, answers, wordListwithNoRep);
     }
 
-    private static void calculateAnswers(double[][] tab, List<String> questionV, List<String> goodAnswer, List<String[]> answers, List<Word> alfabet ) throws FileNotFoundException {
+    private static void calculateAnswers(double[][] tab, List<String> questionV, List<String> goodAnswer, List<String[]> answers, List<Word> alfabet) throws FileNotFoundException {
         Ctx ctx = new Ctx();
 
+        long correctAnswersSum = 0;
+        double efficiency = 0;
 
+        try (PrintWriter out = new PrintWriter("texts.txt")) {
+            for (int i = 0; i < questionV.size(); i++) {
+                int Q = findPosition(questionV.get(i), alfabet);
+                int A1 = findPosition(answers.get(i)[0], alfabet);
+                int A2 = findPosition(answers.get(i)[1], alfabet);
+                int A3 = findPosition(answers.get(i)[2], alfabet);
+                int A4 = findPosition(answers.get(i)[3], alfabet);
+                double cos1 = ctx.cosinusSimilarity(tab, Q, A1);
+                double cos2 = ctx.cosinusSimilarity(tab, Q, A2);
+                double cos3 = ctx.cosinusSimilarity(tab, Q, A3);
+                double cos4 = ctx.cosinusSimilarity(tab, Q, A4);
+                int wyn = max(cos1, cos2, cos3, cos4);
 
-        try(PrintWriter out = new PrintWriter("texts.txt")  ){
-        for(int i=0; i<questionV.size(); i++)
-        {
-            int Q = findPosition(questionV.get(i),alfabet);
-            int A1 = findPosition(answers.get(i)[0],alfabet);
-            int A2 = findPosition(answers.get(i)[1],alfabet);
-            int A3 = findPosition(answers.get(i)[2],alfabet);
-            int A4 = findPosition(answers.get(i)[3],alfabet);
-            double cos1 = ctx.cosinusSimilarity(tab, Q, A1);
-            double cos2 = ctx.cosinusSimilarity(tab, Q, A2);
-            double cos3 = ctx.cosinusSimilarity(tab, Q, A3);
-            double cos4 = ctx.cosinusSimilarity(tab, Q, A4);
-            int wyn = max(cos1,cos2,cos3,cos4);
+                System.out.println("wynik obliczen : " + answers.get(i)[wyn] + ",  dla pytania '" + questionV.get(i) + "'  Poprawna odpowedz: " + goodAnswer.get(i));
 
-            System.out.println("wynik obliczen : "+ answers.get(i)[wyn] + ",  dla pytania '" + questionV.get(i)+ "'  Poprawna odpowedz: " + goodAnswer.get(i));
+                String text = ("wynik obliczen : " + answers.get(i)[wyn] + ",  dla pytania '" + questionV.get(i) + "'  Poprawna odpowedz: " + goodAnswer.get(i) + "\n");
 
-            String text = ("wynik obliczen : "+ answers.get(i)[wyn] + ",  dla pytania '" + questionV.get(i)+ "'  Poprawna odpowedz: " + goodAnswer.get(i)+"\n");
+                System.out.println(goodAnswer.get(i));
 
+                if (answers.get(i)[wyn].equals(goodAnswer.get(i))) {
+                    correctAnswersSum++;
+                }
 
                 out.println(text);
             }
-
+            efficiency = (double) correctAnswersSum / (double) questionV.size();
+            System.out.println("Skuteczność algorytmu wynosi: " + efficiency);
+            out.println("Skuteczność algorytmu wynosi: " + efficiency);
         }
     }
 
     private static int max(double a, double b, double c, double d) {
 
-        double wynik =  Math.max(a, Math.max(b, Math.max(c, d)));
-        if(wynik == a)
-        {return 0;}
-        if(wynik == b)
-        {return 1;}
-        if(wynik == c)
-        {return 2;}
-        else return 3;
+        double wynik = Math.max(a, Math.max(b, Math.max(c, d)));
+        if (wynik == a) {
+            return 0;
+        }
+        if (wynik == b) {
+            return 1;
+        }
+        if (wynik == c) {
+            return 2;
+        } else return 3;
 
     }
 }
