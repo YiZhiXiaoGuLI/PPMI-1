@@ -104,16 +104,16 @@ public class Questions {
             allAnswersForQuestion.clear();
             correctCharAnswer[0] = String.valueOf(correct_answers.get(iterator[0]));
             if(correctCharAnswer[0].endsWith("a)")) {
-                s.setCorrectAnswer(String.valueOf(aAnswers.get(iterator[0])));
+                s.setCorrectAnswer(aAnswers.get(iterator[0]).getContent());
             }
             if(correctCharAnswer[0].endsWith("b)")) {
-                s.setCorrectAnswer(String.valueOf(bAnswers.get(iterator[0])));
+                s.setCorrectAnswer(bAnswers.get(iterator[0]).getContent());
             }
             if(correctCharAnswer[0].endsWith("c)")) {
-                s.setCorrectAnswer(String.valueOf(cAnswers.get(iterator[0])));
+                s.setCorrectAnswer(cAnswers.get(iterator[0]).getContent());
             }
             if(correctCharAnswer[0].endsWith("d)")) {
-                s.setCorrectAnswer(String.valueOf(dAnswers.get(iterator[0])));
+                s.setCorrectAnswer(dAnswers.get(iterator[0]).getContent());
             }
             iterator[0]++;
         });

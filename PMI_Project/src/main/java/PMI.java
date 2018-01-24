@@ -121,8 +121,6 @@ public class PMI {
 
                 String text = ("wynik obliczen : " + answers.get(i)[wyn] + ",  dla pytania '" + questionV.get(i) + "'  Poprawna odpowedz: " + goodAnswer.get(i) + "\n");
 
-                System.out.println(goodAnswer.get(i));
-
                 if (answers.get(i)[wyn].equals(goodAnswer.get(i))) {
                     correctAnswersSum++;
                 }
